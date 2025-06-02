@@ -130,9 +130,10 @@
         })
         .then(value => {
             console.log("Read value: ", value);
-            const decodedValue = new TextDecoder('ascii').decode(value);
-            console.log("Received value: ", decodedValue);
-            retrievedValue.innerHTML = decodedValue;
+           let arr = Float32Array.from(value);
+           // const decodedValue = new TextDecoder('ascii').decode(value);
+            console.log("Received value: ", arr);
+            retrievedValue.innerHTML = arr;
         })
         .catch(error => {
             console.log('Error: ', error);
